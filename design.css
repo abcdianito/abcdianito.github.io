@@ -1,4 +1,4 @@
- body {
+body {
             font-family: 'Montserrat', sans-serif;
             background-image: url(spooderman.jpg); 
             background-repeat: no-repeat;
@@ -61,6 +61,7 @@
             font-family: 'Lora', serif;
         }
         
+        
         footer {
             background-color: #ab0000; 
             color: #ffffff;
@@ -72,4 +73,5 @@
         footer p {
             margin: 0;
         }
+ 
  
