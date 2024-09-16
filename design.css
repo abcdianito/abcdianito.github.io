@@ -384,10 +384,7 @@ section{
 }
 .footer{
     background-color: var(--bg-color);
-    padding: 50px 0;
-}
-.footer .social-icons{
-    text-align: center;
+    padding: 20px 0;
 }
 .footer ul{
     text-align: center;
@@ -409,4 +406,7 @@ section{
     text-align: center;
     margin-top: 40px;
     font-size: 16px;
+}
+.footer-copyright{
+    text-align: center;
 }
