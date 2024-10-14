@@ -3,7 +3,7 @@
 
 <head>
     <title>Olivia Woodruff Portfolio</title>
-    <link href="style.css" type="text/css" rel="stylesheet">
+    <link href="woodruff.css" type="text/css" rel="stylesheet">
 
 </head>
 
@@ -76,7 +76,7 @@
     <h6>These are the codes provided from Codecademy</h6>
    
     <a href="Healthy Recipe.html" target="_blank" class="back-to-portfolio">BACK TO HEALTHY RECIPES</a> <br>
-    <a href="/abcdianito.github.io/index.html#schoolprojects" target="_blank" class="back-to-portfolio">BACK TO PORTFOLIO</a>
+    <a href="abcdianito.github.io" target="_blank" class="back-to-portfolio">BACK TO PORTFOLIO</a>
 
 </body>
 </html>
