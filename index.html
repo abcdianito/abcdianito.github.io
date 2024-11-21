@@ -5,34 +5,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
-    <link rel="stylesheet" href="maindesign.css">
+    <link rel="stylesheet" href="Main.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
 </head>
 
 <body>
     <header class = "header">
         <a href ="#home" class="logo">
-            Beatriz <span> Dianito</span>
+        <span> Beatriz Dianito</span>
         </a>
 
         <i class = "bx bx-menu" id="menu-icon"></i>
 
     <nav class = "navbar">
-        <a href ="#home">Home</a>
-        <a href ="#about">About</a>
-        <a href ="#favorites">Favorites</a>
-        <a href ="#projects">School Projects</a>
-        <a href ="#talents">Talents</a>
+           <a href ="#home">Home</a>
+           <a href ="#about">About</a>
+           <a href ="#favorites">Favorites</a>
+           <a href ="#projects">School Projects</a>
+           <a href ="#talents">Talents</a>
     </nav>
     <button class="gradient-btn">About Me</button>
+    <img src="moon.png" id="icon" alt="Dark Mode Icon">
 </header>
+
 
 <section class="home" id ="home">
 
     <div class="home-content">
         <h1>Hola! It's <span> Beatriz</span></h1>
         <h3>I'm a <span>2nd Year BSIT</span> student</h3>
-        <p>Let's get to know about me more</p>
+        <h4>Let's get to know about me more</h4>
 
         <div class="social-icons">
                 <a href ="https://www.instagram.com/_abcdianito/" target="_blank">
@@ -48,13 +50,10 @@
                </a>             
             </div>
             <div class = "btn-group">
-                <a href ="fashion/fashion blog.html" target="_blank" class="btn">Fashion Blog</a>
-                <a href ="healthyrec/Healthy Recipe.html" class="btn">Health Recipes</a>
+                <a href ="C:\2nd Year\1ST SEM\WEB DEV\GitHub\abcdianito.github.io\fashion blog.html" target="_blank" class="btn">Fashion Blog</a>
+                <a href ="healthrec/Healthy Recipe.html" class="btn">Health Recipes</a>
                 <a href ="woodruff/woodruff.html" class="btn">Woodruff Portfolio</a>
             </div>
-        </div>
-        <div class="home-img">
-            <img src="eme.jpg" alt ="bea">
         </div>
     </section>
     <section class="about" id ="about">
@@ -71,12 +70,12 @@
                  I turned 19 on
                  May 12, 2005. My zodiac sign is Taurus.
                 </p>
-        <a href="#favorites" class="btn">></a>
+        <a href="#favorites" class="btn">Next</a>
         </div>
         </section>
         <section class = "favorites" id="favorites">
             <div class="favorites-content">
-                <h2 class ="heading">Favorites</h2>
+                <h2 class ="heading"><span>Favorites</span></h2>
             
                 <div class="favorites-container">
                     <div class="favorites-gallery">
@@ -100,67 +99,47 @@
                         </div>
                     </div>
                 </div>
+                <a href="#talents" class="btn">Next</a>
             </div>
         </section>
+
         <section class="talents" id ="talents">
             <div class="talents-content">
-                <h2>Talents</h2>
-
-                <div class="talents-container">
-
-                    <div class="talents-gallery">
-                        <div class="talents-item">
-                            <h1><span>Drawing on Paper</span></h1>
-                            <img src="traditional.jpg" alt="traditional drawing">
-                            <div class="talent-overlay">
-                                <div class="talent-text">Traditional Drawing</div>
-                           </div>
-                        </div>
-                    
-                    <div class="talents-gallery">
-                    <div class="talents-item">
-                        <h1><span>Drawing on Digital tools</span></h1>
-                        <img src="digital.jpg" alt="digital drawing">
-                            <div class="talent-text">Digital Drawing</div>
-                        </div>
-                    </div>
-
-                    <div class="talents-gallery">
-                        <div class="talents-item">
-                            <h1><span>Playing Sports Activities</span></s></h1>
-                            <img src="softball.png" alt="softball">
-                            
-                           </div>
-                        </div>
-
-                    <div class="talents-gallery">
-                        <div class="talents-item">
-                            <h1><span>Photography</span></h1>
-                            <img src="photography.png" alt="photography">
-                            <div class="talent-overlay">
-                                    <div class="talent-text">Photography</div>
-                               </div>
-                            </div>
-                        </div>
-                    </div>
+                <h2><span>Talents</span></h2>
+      
+            <div class="talents-container">
+              <!-- First Box: Image Carousel -->
+              <div class="talents-carousel">
+                <div class="carousel-inner">
+                  <div class="carousel-item active" style="background-image: url('digital.jpg');"></div>
+                  <div class="carousel-item" style="background-image: url('traditional.jpg');"></div>
+                  <div class="carousel-item" style="background-image: url('softball.png');"></div>
+                  <div class="carousel-item" style="background-image: url('photography.png');"></div>
                 </div>
-                <a href="#" class="btn">></a>
+                <button class="carousel-control prev" onclick="prevSlide()">&#10094;</button>
+                <button class="carousel-control next" onclick="nextSlide()">&#10095;</button>
+                <a href="#about" class="btn">Next</a>
+              </div>
             </section>
-</body>
 
 <footer class="footer">
-        <div class="list">
-            <ul>
-            <li><a href="">Home</a></li>
-            <li><a href="#aboutme">About Me</a></li>
-            <li><a href="#favorites">Favorites</a></li>
-            <li><a href="#schoolprojects">Projects</a></li>
-            <li><a href="#talents">Talents</a></li>
-            <li><a href="#more">More</a></li>
-        </ul>
-        </div>
-        <div class = "footer-copyright">
-       <p> © Beatriz C. Dianito | All Rights Reserved </p>
-        </div>
+            <div class="list">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#aboutme">About Me</a></li>
+                    <li><a href="#favorites">Favorites</a></li>
+                    <li><a href="#schoolprojects">Projects</a></li>
+                    <li><a href="#talents">Talents</a></li>
+                    <li><a href="#more">More</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-copyright">
+                <p>© Beatriz C. Dianito | All Rights Reserved</p>
+            </div>
+        
 </footer>
+<script src="jscript.js"></script>
+
+</body>
 </html>
