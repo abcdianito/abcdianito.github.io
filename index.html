@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio Website</title>
-    <link rel="stylesheet" href="maindesign.css">
+    <link rel="stylesheet" href="Main.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel="stylesheet">
 </head>
 
@@ -21,8 +21,8 @@
            <a href ="#home">Home</a>
            <a href ="#about">About</a>
            <a href ="#favorites">Favorites</a>
-           <a href ="#projects">School Projects</a>
            <a href ="#talents">Talents</a>
+           <a href ="#jokes">Jokes</a>
     </nav>
     <button class="gradient-btn">About Me</button>
     <img src="moon.png" id="icon" alt="Dark Mode Icon">
@@ -73,6 +73,7 @@
         <a href="#favorites" class="btn">Next</a>
         </div>
         </section>
+
         <section class = "favorites" id="favorites">
             <div class="favorites-content">
                 <h2 class ="heading"><span>Favorites</span></h2>
@@ -122,14 +123,21 @@
               </div>
             </section>
 
+<section class = "jokes" id="joke">
+<div id="joke-container">
+    <h1>Joke of the Day</h1>
+    <p id="joke-text">Loading joke...</p>
+    <button onclick="getJoke()">Get Another Joke</button>
+</div>
+</section>
 <footer class="footer">
             <div class="list">
                 <ul>
                     <li><a href="#home">Home</a></li>
                     <li><a href="#aboutme">About Me</a></li>
                     <li><a href="#favorites">Favorites</a></li>
-                    <li><a href="#schoolprojects">Projects</a></li>
                     <li><a href="#talents">Talents</a></li>
+                    <li><a href="#API">Generator</a></li>
                     <li><a href="#more">More</a></li>
                 </ul>
             </div>
