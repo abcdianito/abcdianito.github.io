@@ -23,21 +23,37 @@ html {
 }
 
 :root {
-    --bg-color: #080808;
+    --bg-color: white;
     --second-bg-color: #101010;
-    --text-color: white;
+    --text-color: rgb(255, 255, 255);
+    --text2-color: rgb(0, 0, 0);
     --main-color: #5b0a31;
 }
-
-body{
-    background-image: url(bg.jpg); 
-    background-repeat: no-repeat;
-    backdrop-filter: blur(10px);
-    background-size: cover;
-    
-    color: var(--text-color)
+.dark-theme{
+    --bg-color: rgb(0, 0, 0);
+    --second-bg-color: #ffffff;
+    --text-color: rgb(0, 0, 0);
+    --text2-color: rgb(255, 255, 255);
+    --main-color: #5b0a31;
+}
+#icon {
+    width: 30px; /* Adjust size of the sun icon */
+    height: auto; /* Keep aspect ratio intact */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+    display: inline-block; /* Ensure it's a block element for proper alignment */
+    margin-left: 5px; /* Add some spacing from the last navbar item */
 }
 
+/* Add a hover effect for the sun icon */
+#icon:hover {
+    opacity: 0.8; /* Slight opacity change on hover */
+}
+body{
+    background-color: var(--bg-color); /* Example light gray color */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    height: 100vh; 
+}
 .header{
     position:sticky;
     width: 100%;
@@ -78,7 +94,7 @@ span{
 }
 .navbar a {
     font-size: 1.8rem;
-    color: var(--text-color);
+    color: var(--text2-color);
     margin-left: 6rem;
     font-weight: 500;
     transition: 0.3s ease-in-out;
@@ -89,6 +105,17 @@ span{
     color: var(--main-color);
     border-bottom: 3px solid var(--main-color);
 }
+ /* New class for when scrolled */
+ .scrolled {
+    color: white !important; /* Make text white when scrolled */
+  }
+
+  /* Sections with different backgrounds for visibility */
+  section {
+    height: 100vh;
+    padding: 50px;
+    margin-top: 80px; /* To ensure the navbar doesn't overlap content */
+  }
 .gradient-btn{
     font-size: 1.8rem;
     padding: .5rem 1rem;
@@ -102,7 +129,7 @@ span{
     letter-spacing: 1px;
     cursor:pointer;
     transition: 0.3s ease-in-out;
-    color: white;
+    color: var(--text-color);
     border: none;
     text-wrap: nowrap;
 }
@@ -115,16 +142,21 @@ section{
     padding: 10rem 12%;
 }
 .home{
-    display: flex;
-    align-items: center;
+    display: flex-start;
+    align-items: flex-start;
     justify-content:center;
     gap: 15rem;
+    background-image: url(bg.jpg);
+    background-size: cover; 
+    background-repeat: no-repeat;  
+    background-position: center;
 }
 .home-content{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
-    text-align: right;
+    align-items: flex-start;
+    text-align: left;
+    color: white;
 }
 .home-content h1{
     font-size: 8rem;
@@ -132,32 +164,21 @@ section{
     margin-top: 1.5rem;
     line-height: 1;
 }
-.home-content h3{
-    margin: 1rem 0;
-    font-size: 4rem;
-}
-.home-content p{
-    font-size: 1.5rem;
+.home-content h4{
     font-weight: 500;
-    line-height: 1.8;
+    margin: -0.5rem 0;
+    font-size: 2.5rem;
 }
-.home-img img{
-    width: 32vw;
-    border-radius: 50%;
-    box-shadow: 0 0 25px var(--main-color);
-    transition: 0.4s ease-in-out;
-}
-.home-img img:hover{
-    box-shadow: 0 0 25px var(--main-color);
-    box-shadow: 0 0 50px var(--main-color);
-    box-shadow: 0 0 100px var(--main-color);
+.home-content h3{
+    margin: -1rem 0;
+    font-size: 5rem;
 }
 .social-icons {
     display: flex;
     gap: 0.5rem;
     justify-content: left;
     text-align: left;
-    margin-top: 1.5rem;
+    margin-top: 2rem;
 }
 .social-icons a{
     display: flex;
@@ -170,12 +191,12 @@ section{
     background: transparent;
     border: 2px solid var(--main-color);
     border-radius: 50%;
-    color: var(--main-color);
+    color: white;
     margin: 3rem 0.5;
     transition: 0.3s ease;
 }
 .social-icons a:hover{
-    color: white;
+    color: var(--bg-color);
     background-color: var(--main-color);
     transform: scale(1.2)translateY(-5px);
     box-shadow: 0 0 25px var(--main-color);
@@ -188,7 +209,7 @@ section{
     box-shadow: 0 0 25px var(--main-color);
     border-radius: 3rem;
     font-size: 1.8rem;
-    color: black;
+    color: white;
     letter-spacing: 0.3rem;
     border: 2px solid transparent;
     font-weight: 600;
@@ -200,38 +221,56 @@ section{
     box-shadow: 0 0 25px var(--main-color);
     box-shadow: 0 0 50px var(--main-color);
 }
-.btn-group a:nth-of-type(1){
-    background-color: black;
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-    box-shadow: 0 0 25px transparent;
+.btn-group{
+    margin-bottom: 6em;
 }
+.btn-group a:nth-of-type(1){
+    background-color: rgba(0, 0, 0, 0.3); /* Transparent dark background */
+      color: var(--main-color); /* Text color set to the new main color */
+      border: 2px solid var(--main-color); /* Border with the new color */
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 0 25px transparent; /* Transparent shadow by default */
+      transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    }
 .btn-group a:nth-of-type(1):hover{
-    box-shadow: 0 0 25px var(--main-color);
-    background-color: var(--main-color);
-    color:black;
+    background-color: rgba(91, 10, 49, 0.3); /* Light red transparent background on hover */
+      color: var(--text-color); /* Change text color to white on hover */
+      border: 2px solid rgba(91, 10, 49, 0.7); /* Stronger red border on hover */
+      box-shadow: 0 0 25px rgba(91, 10, 49, 0.7); /* Red shadow on hover */
 }
 .btn-group a:nth-of-type(2){
-    background-color: black;
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-    box-shadow: 0 0 25px transparent;
+    background-color: rgba(0, 0, 0, 0.3); /* Transparent dark background */
+    color: var(--main-color); /* Text color set to the new main color */
+    border: 2px solid var(--main-color); /* Border with the new color */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 25px transparent; /* Transparent shadow by default */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 .btn-group a:nth-of-type(2):hover{
-    box-shadow: 0 0 25px var(--main-color);
-    background-color: var(--main-color);
-    color:black;
+    background-color: rgba(91, 10, 49, 0.3); /* Light red transparent background on hover */
+    color: var(--text-color); /* Change text color to white on hover */
+    border: 2px solid rgba(91, 10, 49, 0.7); /* Stronger red border on hover */
+    box-shadow: 0 0 25px rgba(91, 10, 49, 0.7); /* Red shadow on hover */
 }
 .btn-group a:nth-of-type(3){
-    background-color: black;
-    color: var(--main-color);
-    border: 2px solid var(--main-color);
-    box-shadow: 0 0 25px transparent;
-}
+    background-color: rgba(0, 0, 0, 0.3); /* Transparent dark background */
+    color: var(--main-color); /* Text color set to the new main color */
+    border: 2px solid var(--main-color); /* Border with the new color */
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 0 25px transparent; /* Transparent shadow by default */
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+  }
 .btn-group a:nth-of-type(3):hover{
-    box-shadow: 0 0 25px var(--main-color);
-    background-color: var(--main-color);
-    color:black;
+    background-color: rgba(91, 10, 49, 0.3); /* Light red transparent background on hover */
+    color: var(--text-color); /* Change text color to white on hover */
+    border: 2px solid rgba(91, 10, 49, 0.7); /* Stronger red border on hover */
+    box-shadow: 0 0 25px rgba(91, 10, 49, 0.7); /* Red shadow on hover */
 }
 #about {
     position: relative; 
@@ -243,7 +282,7 @@ section{
     text-align: left;
     min-height: 100vh;
     overflow: hidden;
-    color: var(--text-color);
+    color: var(--text2-color);
 }
 
 #about::before {
@@ -253,9 +292,7 @@ section{
     left: 0;
     width: 100%;
     height: 100%;
-    background-size: cover;
-    background-image: url(bg2.jpg);
-    filter: blur(8px); 
+    background-size: cover; 
     z-index: -1; 
 }
 .about-img img{
@@ -277,7 +314,7 @@ section{
     font-size: 3rem;
 }
 .about-content .btn{
-    font-size: 5rem;
+    font-size: 3rem;
     margin: 1.5rem 0;
 }
 ::-webkit-scrollbar{
@@ -285,7 +322,7 @@ section{
 }
 ::-webkit-scrollbar-thumb{
     background-color: var(--main-color);
-    border-radius: 15rem;
+    border-radius: 3rem;
 }
 ::-webkit-scrollbar-thumb:hover{
     box-shadow: 0 0 25px var(--main-color);
@@ -322,7 +359,7 @@ section{
     backdrop-filter: blur(10px); 
     padding: 20px;
     border-radius: 10px;
-    color: #fff; 
+    color: var(--text-color); 
 }
 
 #favorites p {
@@ -399,6 +436,23 @@ section{
     letter-spacing: 1px;
     margin: 0;
 }
+.favorites-content .btn{
+    font-size: 3rem;
+    margin: 1.5rem 0;
+}
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+    border-radius: 3rem;
+}
+::-webkit-scrollbar-thumb:hover{
+    box-shadow: 0 0 25px var(--main-color);
+}
+::-webkit-scrollbar-track{
+    background-color: var(--second-bg-color);
+}
 #talents {
     position: relative; 
     padding: 5rem 9%;
@@ -410,102 +464,171 @@ section{
     overflow: hidden;
     color: var(--text-color);
 }
-
-#talents::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    background-image: url(bg2.jpg);
-    filter: blur(8px); 
-    z-index: -1; 
-}
-.talents-container{
-    background: rgba(0, 0, 0, 0.5); 
-    backdrop-filter: blur(10px); 
-    padding: 20px;
-    border-radius: 10px;
-    color: #fff; 
-}
-
-#talents p {
-    font-size: 2.6rem;
-    margin-bottom: 3rem;
-    font-weight: 300;
-    max-width: 800px;
-    text-align: left;
-}
-
 .talents-content h2{
     font-size: 7rem;
     text-align: center;
 }
-
-.talents-gallery {
+.talents-container {
     display: flex;
-    gap: 2rem;
-    justify-content: center;
+    flex-direction: column; /* Align items vertically if needed */
+    justify-content: center; /* Centers the content horizontally */
+    align-items: center; /* Centers the content vertically */
+    width: 90%;
+    max-width: 1400px; /* Restricts max width */
+    gap: 1.5rem; /* Space between items */
     flex-wrap: wrap;
 }
 
-.talents-item {
-    position: relative;
-    width: 25vw;
-    height: 35vw;
-    max-width: 300px;
-    max-height: 420px;
-    overflow: hidden;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    transition: transform 0.5s ease, box-shadow 0.5s ease;
-}
-.talents-item h1{
-    margin-top: 10px;
-    font-size: 1.5rem;
-    color: white;
+.talents-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    padding-top: 2rem;
 }
 
-.talents-item img {
+.talents-title {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.talents-subtitle {
+    font-size: 2rem;
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+/* Button Styling */
+.talents-button {
+    width: auto;
+    margin: 0 auto;
+}
+
+.talents-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Centering and styling for the carousel */
+.talents-carousel {
+    position: relative;
+    width: 500px; /* Reduced width */
+    height: 500px; /* Reduced height */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    margin: 0 auto; /* Center the carousel horizontally */
+}
+
+/* Carousel inner container and items */
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    flex: 1 0 100%;
+    background-size: cover;
+    background-position: center;
+    height: 100%;
+}
+
+/* Carousel Controls */
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--bg-color);
+    color: var(--second-bg-color);
+    border: none;
+    font-size: 1.5rem;
+    padding: 8px 12px;
+    cursor: pointer;
+    z-index: 10;
+    user-select: none;
+}
+
+.carousel-inner {
+    display: flex;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: transform 0.5s ease;
 }
 
-.talents-item:hover img {
-    transform: scale(1.1);
+.carousel-control.prev {
+    left: 10px;
+    border-radius: 0 5px 5px 0;
 }
 
-.footer{
+.carousel-control.next {
+    right: 10px;
+    border-radius: 5px 0 0 5px;
+}
+
+.carousel-control:hover {
     background-color: var(--bg-color);
+}
+.talents-content .btn{
+    font-size: 3rem;
+    margin: 1.5rem 0;
+}
+::-webkit-scrollbar{
+    width: 8px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: var(--main-color);
+    border-radius: 3rem;
+}
+::-webkit-scrollbar-thumb:hover{
+    box-shadow: 0 0 25px var(--main-color);
+}
+::-webkit-scrollbar-track{
+    background-color: var(--bg-color);
+}
+
+  @media (max-width: 1410px) {
+    .favorite-container {
+      flex-direction: column; /* Stacks the items vertically */
+      align-items: center;   /* Centers the items horizontally */
+    }
+  
+    .favorite-carousel, .spotify-placeholder {
+      width: 100%;           /* Ensures boxes keep their original size */
+      max-width: 500px;      /* You can adjust max-width to your preference */
+      margin: 0 auto;        /* Centers the boxes horizontally */
+    }
+  }
+.footer{
+    background-color: var(--second-bg-color);
     padding: 20px 0;
 }
-.footer ul{
-    text-align: center;
-    font-size: 1.8rem;
-} 
-.footer ul li{
+/* Navigation List Styling */
+.list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.list li {
     display: inline-block;
-    margin-left: 20px;
 }
-.footer ul li a{
-    color:white;
-    border-bottom: 3px solid transparent;
-    transition:0.3 ease-in-out;
+
+.list a {
+    text-decoration: none;
+    color: var(--text-color);
+    font-size: 2rem;
 }
-.footer ul li a:hover{
-    border-bottom: 3px solid var(--main-color);
+
+.list a:hover {
+    color: var(--main-color); /* Change color on hover */
 }
-.footer .copyright{
-    text-align: center;
-    margin-top: 40px;
-    font-size: 16px;
-}
+
 .footer-copyright{
     text-align: center;
+    color: var(--text-color);
 }
 
 @media (max-width: 995px) {
