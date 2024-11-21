@@ -29,5 +29,16 @@ function nextSlide() {
   showSlide(currentIndex + 1);
 }
 
-// Initialize the first slide
-showSlide(currentIndex);
+async function getJoke() {
+    const response = await fetch('https://v2.jokeapi.dev/joke/Any?type=single');
+    const data = await response.json();
+    
+    if (data.error) {
+        document.getElementById('joke-text').textContent = 'Sorry, there was an error fetching the joke.';
+    } else {
+        document.getElementById('joke-text').textContent = data.joke;
+    }
+}
+
+// Fetch an initial joke when the page loads
+getJoke();
