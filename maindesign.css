@@ -470,12 +470,12 @@ section{
 }
 .talents-container {
     display: flex;
-    flex-direction: column; /* Align items vertically if needed */
-    justify-content: center; /* Centers the content horizontally */
-    align-items: center; /* Centers the content vertically */
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
     width: 90%;
-    max-width: 1400px; /* Restricts max width */
-    gap: 1.5rem; /* Space between items */
+    max-width: 1400px; 
+    gap: 1.5rem; 
     flex-wrap: wrap;
 }
 
@@ -588,16 +588,82 @@ section{
 
   @media (max-width: 1410px) {
     .favorite-container {
-      flex-direction: column; /* Stacks the items vertically */
-      align-items: center;   /* Centers the items horizontally */
+      flex-direction: column; 
+      align-items: center;   
     }
   
-    .favorite-carousel, .spotify-placeholder {
-      width: 100%;           /* Ensures boxes keep their original size */
-      max-width: 500px;      /* You can adjust max-width to your preference */
-      margin: 0 auto;        /* Centers the boxes horizontally */
+    .favorite-carousel {
+      width: 100%;          
+      max-width: 500px;    
+      margin: 0 auto;      
     }
   }
+  #joke-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    width: 90%;
+    max-width: 1400px; 
+    gap: 1.5rem; 
+    flex-wrap: wrap;
+}
+
+#joke-container h1 {
+    font-size: 2rem;
+    color: var(--text2-color);
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#joke-text {
+    font-size: 1.25rem;
+    color: var(--text2-color);
+    margin-bottom: 30px;
+    line-height: 1.5;
+}
+
+/* Button Styling */
+button {
+    background-color: var(--main-color);
+    color: var(--text-color);
+    border: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+button:hover {
+    background-color: var(--main-color);
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 600px) {
+    #joke-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    #joke-container h1 {
+        font-size: 1.8rem;
+    }
+
+    #joke-text {
+        font-size: 1.1rem;
+    }
+
+    button {
+        padding: 10px 25px;
+    }
+}
+
 .footer{
     background-color: var(--second-bg-color);
     padding: 20px 0;
